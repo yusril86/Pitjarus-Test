@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Pitjarus Test</string>
+    <string name="title_activity_store">StoreActivity</string>
+</resources>

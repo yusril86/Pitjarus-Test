@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        >
+        <View
+            android:id="@+id/viewTop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/purple_500"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivImageUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_launcher_background"
+            app:layout_constraintBottom_toBottomOf="@+id/viewTop"
+            app:layout_constraintBottom_toTopOf="@id/tvNameUser"
+            app:layout_constraintStart_toStartOf="@+id/viewTop"
+            app:layout_constraintEnd_toEndOf="@+id/viewTop"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNameUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User"
+            app:layout_constraintTop_toBottomOf="@+id/viewTop"
+            app:layout_constraintStart_toStartOf="@id/ivImageUser"
+            app:layout_constraintEnd_toEndOf="@id/ivImageUser"
+            android:textSize="36sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="24dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Role:{..}"
+            app:layout_constraintTop_toBottomOf="@+id/tvNameUser"
+            app:layout_constraintStart_toStartOf="@id/tvNameUser"
+            app:layout_constraintEnd_toEndOf="@id/tvNameUser"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNIK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIK MD00001"
+            app:layout_constraintTop_toBottomOf="@id/tvRole"
+            app:layout_constraintStart_toStartOf="@id/tvRole"
+            app:layout_constraintEnd_toEndOf="@id/tvRole"
+            android:textSize="24sp"
+            android:layout_marginTop="8dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerKunjungan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card_white"
+            app:layout_constraintTop_toBottomOf="@id/tvNIK"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:elevation="15dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="24dp"
+            android:padding="16dp"
+            >
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTitleKunjungan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kunjungan pada bulan Agustus 2020"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="16sp"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvTotalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleKunjungan"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_error"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvActualScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="150"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleKunjungan"
+                app:layout_constraintStart_toEndOf="@+id/tvTotalScore"
+                app:layout_constraintEnd_toStartOf="@+id/tvPercentage"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_check"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_chart"
+                android:text="50%"
+                android:textColor="@color/black"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleKunjungan" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHintTotalScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Score"
+                app:layout_constraintTop_toBottomOf="@id/tvTotalScore"
+                app:layout_constraintStart_toStartOf="@id/tvTotalScore"
+                app:layout_constraintEnd_toEndOf="@id/tvTotalScore"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHintActualScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Actual Score"
+                app:layout_constraintTop_toBottomOf="@id/tvActualScore"
+                app:layout_constraintStart_toStartOf="@id/tvActualScore"
+                app:layout_constraintEnd_toEndOf="@id/tvActualScore"
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvHintPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Percentage"
+                app:layout_constraintTop_toBottomOf="@id/tvPercentage"
+                app:layout_constraintStart_toStartOf="@id/tvPercentage"
+                app:layout_constraintEnd_toEndOf="@id/tvPercentage"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            app:layout_constraintTop_toBottomOf="@id/containerKunjungan"
+            app:layout_constraintStart_toStartOf="@id/containerKunjungan"
+            android:textColor="#FFC107"
+            android:layout_marginTop="8dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btnKunjungan"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:src="@drawable/ic_store"
+            android:background="@drawable/bg_circle"
+            app:layout_constraintTop_toBottomOf="@id/tvMenu"
+            app:layout_constraintStart_toEndOf="@id/tvMenu"
+            android:layout_marginTop="20dp"
+            app:civ_border_width="1dp"
+            app:civ_border_color="#AE9595"
+            android:padding="8dp"
+            />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvBtnKunjungan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btnKunjungan"
+            app:layout_constraintStart_toStartOf="@id/btnKunjungan"
+            app:layout_constraintEnd_toEndOf="@id/btnKunjungan"
+            android:text="Kunjungan"
+            android:textSize="16sp"
+
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
